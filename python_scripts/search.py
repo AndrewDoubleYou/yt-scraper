@@ -1,11 +1,7 @@
-#!/usr/bin/python
+# search request for a specified search term.
 
-# This sample executes a search request for the specified search term.
 # Sample usage:
-#   python search.py --q=surfing --max-results=10
-# NOTE: To use the sample, you must provide a developer key obtained
-#       in the Google APIs Console. Search for "REPLACE_ME" in this code
-#       to find the correct place to provide that key..
+#   python3 search.py --q=surfing --max-results=10
 
 import argparse
 import os
@@ -14,12 +10,9 @@ from dotenv import load_dotenv
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+
 load_dotenv()
 
-# Set DEVELOPER_KEY to the API key value from the APIs & auth > Registered apps
-# tab of
-#   https://cloud.google.com/console
-# Please ensure that you have enabled the YouTube Data API for your project.
 DEVELOPER_KEY = os.getenv("YOUTUBE_API_KEY") 
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
